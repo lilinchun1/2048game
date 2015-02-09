@@ -11,8 +11,8 @@ function showNumberWithAnimation( i , j , randNumber ){
     numberCell.text( randNumber );
 
     numberCell.animate({
-        width:"100px",
-        height:"100px",
+        width:cellSideLength,
+        height:cellSideLength,
         top:getPosTop( i , j ),
         left:getPosLeft( i , j )
     },50);
@@ -25,4 +25,8 @@ function showMoveAnimation( fromx , fromy , tox, toy ){
         top:getPosTop( tox , toy ),
         left:getPosLeft( tox , toy )
     },200);
+}
+
+function updateScore( score ){
+    $('#score').text( score );
 }

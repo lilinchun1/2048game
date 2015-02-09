@@ -87,6 +87,21 @@ function canMoveLeft( board ){
     return false;
 }
 
+function canMoveRight( board ) {
+
+    for(var i = 0; i < 4; i++){
+        for(var j = 0; j < 3; j++ ){
+            if(board[i][j] !== 0){
+                if(board[i][j+1] === 0 || board[i][j+1] === board[i][j]){
+                    return true;
+                }
+            }
+        }
+    }
+
+    return false;
+}
+
 function canMoveRight( board ){
 
     for( var i = 0 ; i < 4 ; i ++ )
@@ -131,5 +146,14 @@ function noBlockVertical( col , row1 , row2 , board ){
     for( var i = row1 + 1 ; i < row2 ; i ++ )
         if( board[i][col] != 0 )
             return false;
+    return true;
+}
+
+function nomove(board) {
+    if( canMoveDown() || canMoveLeft() || canMoveRight() || canMoveUp()){
+
+        return false;
+
+    }
     return true;
 }

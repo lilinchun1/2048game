@@ -165,9 +165,15 @@ function moveLeft() {
 }
 
 function isgameover() {
-
+    if(nospace(board) && nomove(board)){
+        gameover();
+    }
 }
 
+function gameover(){
+
+    alert("gameover!");
+}
 
 function moveRight(){
     if( !canMoveRight( board ) )
@@ -262,3 +268,4 @@ function moveDown(){
     setTimeout("updateBoardView()",200);
     return true;
 }
+
